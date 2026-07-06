@@ -1,0 +1,319 @@
+<mujoco model="robo1">
+  <compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <option timestep="0.001" gravity="0 0 -9.81" integrator="implicitfast"/>
+  <asset>
+    <mesh name="ATOM" file="ATOM.stl"/>
+    <mesh name="base" file="base.stl"/>
+    <mesh name="servo5" file="servo5.stl"/>
+    <mesh name="servo7" file="servo7.stl"/>
+    <mesh name="hipYawL" file="hipYawL.stl"/>
+    <mesh name="hipYawR" file="hipYawR.stl"/>
+    <mesh name="servo6" file="servo6.stl"/>
+    <mesh name="servo8" file="servo8.stl"/>
+    <mesh name="hipL" file="hipL.stl"/>
+    <mesh name="hipR" file="hipR.stl"/>
+    <mesh name="servo2" file="servo2.stl"/>
+    <mesh name="servo4" file="servo4.stl"/>
+    <mesh name="thighL1" file="thighL1.stl"/>
+    <mesh name="thighL2" file="thighL2.stl"/>
+    <mesh name="thighL3" file="thighL3.stl"/>
+    <mesh name="thighL4" file="thighL4.stl"/>
+    <mesh name="thighR1" file="thighR1.stl"/>
+    <mesh name="thighR2" file="thighR2.stl"/>
+    <mesh name="thighR3" file="thighR3.stl"/>
+    <mesh name="thighR4" file="thighR4.stl"/>
+    <mesh name="kneeL" file="kneeL.stl"/>
+    <mesh name="kneeR" file="kneeR.stl"/>
+    <mesh name="crusL1" file="crusL1.stl"/>
+    <mesh name="crusL2" file="crusL2.stl"/>
+    <mesh name="crusL3" file="crusL3.stl"/>
+    <mesh name="crusL4" file="crusL4.stl"/>
+    <mesh name="crusR1" file="crusR1.stl"/>
+    <mesh name="crusR2" file="crusR2.stl"/>
+    <mesh name="crusR3" file="crusR3.stl"/>
+    <mesh name="crusR4" file="crusR4.stl"/>
+    <mesh name="servo1" file="servo1.stl"/>
+    <mesh name="servo3" file="servo3.stl"/>
+    <mesh name="footL2" file="footL2.stl"/>
+    <mesh name="footR2" file="footR2.stl"/>
+    
+  </asset>
+
+  <default>
+    <default class="xl330_servo">
+      <joint type="hinge" damping="0.0530964357" armature="5.41683502e-06"/>
+      <position ctrllimited="true" forcelimited="true" forcerange="-0.53936575 0.53936575"
+                kp="3.18772165" kv="0.0358743199"/>
+    </default>
+  </default>
+
+  <worldbody>
+     <light name="light1" pos="1 0 3" dir="-1 0 -1" directional="true"/>
+
+    <body name="ATOM" pos="0 0 0">
+      <joint type="free"/>
+      <inertial pos="0.000000006676 0 0.177554" mass="0.007" diaginertia="4.345430e-7 4.345430e-7 6.403938e-7"/>
+      <geom type="mesh" mesh="ATOM" rgba="0.9 0.9 0.9 1"/>
+      
+      <body name="base" pos="0 0 0">
+        <inertial pos="0 0.00000000003121 0.162547" mass="0.014" diaginertia="5.2092139e-6 7.3682875e-6 8.0434386e-6"/>
+        <geom type="mesh" mesh="base" rgba="0.5 0.5 0.5 1"/>
+
+        <body name="servo5" pos="0 0 0">
+          <joint name="servo5_joint" class="xl330_servo" axis="0 0 1" pos="0.017500 -0.000000000233 0.130754"/>
+          <inertial pos="0.022995 -0.000000000306 0.151059" mass="0.012" diaginertia="6.731345e-7 1.103958e-6 7.138884e-7"/>
+          <geom type="mesh" mesh="servo5" rgba="0.2 0.2 0.2 1"/>
+
+          <body name="hipYawL" pos="0 0 0">
+            <inertial pos="0.036012 0.001539 0.153169" mass="0.0106" diaginertia="1.69677e-6 2.77844e-6 2.68924e-6"/>
+            <geom type="mesh" mesh="hipYawL" rgba="0.5 0.5 0.5 1"/>
+
+            <body name="servo6" pos="0 0 0">
+              <inertial pos="0.051650 0.002405 0.148050" mass="0.012" diaginertia="1.103958e-6 7.138884e-7 6.731345e-7"/>
+              <geom type="mesh" mesh="servo6" rgba="0.2 0.2 0.2 1"/>
+
+              <body name="hipL" pos="0 0 0">
+                <joint name="servo6_joint" class="xl330_servo" axis="0 -1 0" pos="0.051650 -0.017900 0.142555"/>
+                <inertial pos="0.057629 -0.003183 0.122393" mass="0.017061" diaginertia="5.290446e-6 2.376636e-6 5.652026e-6"/>
+                <geom type="mesh" mesh="hipL" rgba="0.5 0.5 0.5 1"/>
+
+                <body name="thighL2" pos="0 0 0">
+                  <joint type="hinge" pos="0.045400 0.015000 0.117304" axis="1 0 0"/>
+                  <inertial pos="0.042594 0.015000 0.098835" mass="0.001879" diaginertia="3.13852e-7 3.01689e-7 1.849e-8"/>
+                  <geom type="mesh" mesh="thighL2" rgba="0.5 0.5 0.5 1"/>
+                  <site name="tL2_a" pos="0.045400 0.015000 0.082304"  size="0.002" rgba="1 0 0 1"/>
+                </body>
+
+                <body name="thighL3" pos="0 0 0">
+                  <joint type="hinge" pos="0.078600 -0.015000 0.117304" axis="1 0 0"/>
+                  <inertial pos="0.081390 -0.015000 0.099804" mass="0.001984" diaginertia="3.47812e-7 3.35713e-7 1.8879e-8"/>
+                  <geom type="mesh" mesh="thighL3" rgba="0.5 0.5 0.5 1" contype="0" conaffinity="0"/>
+                  <site name="tL3_a" pos="0.078600 -0.015000 0.082304"  size="0.002" rgba="1 0 0 1"/>
+                </body>
+
+                <body name="thighL4" pos="0 0 0">
+                  <joint type="hinge" pos="0.045400 -0.015000 0.117304" axis="1 0 0"/>
+                  <inertial pos="0.042610 -0.015000 0.099804" mass="0.001984" diaginertia="3.47811e-7 3.35713e-7 1.8878e-8"/>
+                  <geom type="mesh" mesh="thighL4" rgba="0.5 0.5 0.5 1"/>
+                  <site name="tL4_a" pos="0.045400 -0.015000 0.082304"  size="0.002" rgba="1 0 0 1"/>
+                </body>
+
+                <body name="servo2" pos="0 0 0">
+                  <inertial pos="0.059295 0.009505 0.117304" mass="0.012" diaginertia="7.138884e-7 6.731345e-7 1.103958e-6"/>
+                  <geom type="mesh" mesh="servo2" rgba="0.2 0.2 0.2 1"/>
+
+                  <body name="thighL1" pos="0 0 0">
+                    <joint name="servo2_joint" class="xl330_servo" axis="1 0 0" pos="0.079600 0.015000 0.117304"/>
+                    <inertial pos="0.081490 0.015000 0.099038" mass="0.001900" diaginertia="3.20158e-7 3.08117e-7 1.7895e-8"/>
+                    <geom type="mesh" mesh="thighL1" rgba="0.5 0.5 0.5 1"/>
+
+                    <body name="kneeL" pos="0 0 0">
+                      <joint type="hinge" pos="0.078600 0.015000 0.082304" axis="1 0 0"/>
+                      <inertial pos="0.062000 0.000081 0.076304" mass="0.016518" diaginertia="3.840094e-6 2.300838e-6 5.128523e-6"/>
+                      <geom type="mesh" mesh="kneeL" rgba="0.5 0.5 0.5 1"/>
+                      <site name="tL2_b" pos="0.045400 0.015000 0.082304"  size="0.002" rgba="0 0 1 1"/>
+                      <site name="tL3_b" pos="0.078600 -0.015000 0.082304"  size="0.002" rgba="0 0 1 1"/>
+                      <site name="tL4_b" pos="0.045400 -0.015000 0.082304"  size="0.002" rgba="0 0 1 1"/>
+
+                      <body name="crusL1" pos="0 0 0">
+                        <joint type="hinge" pos="0.078600 0.015000 0.070304" axis="1 0 0"/>
+                        <inertial pos="0.081514 0.015000 0.053884" mass="0.001868" diaginertia="3.09143e-7 2.97113e-7 1.77530e-8"/>
+                        <geom type="mesh" mesh="crusL1" rgba="0.5 0.5 0.5 1" contype="0" conaffinity="0"/>
+                        <site name="cL1_a" pos="0.078600 0.015000 0.035304" size="0.002" rgba="1 0 0 1"/>
+                      </body>
+
+                      <body name="crusL2" pos="0 0 0">
+                        <joint type="hinge" pos="0.045400 0.015000 0.070304" axis="1 0 0"/>
+                        <inertial pos="0.042610 0.015000 0.052804" mass="0.001984" diaginertia="3.47811e-7 3.35713e-7 1.88780e-8"/>
+                        <geom type="mesh" mesh="crusL2" rgba="0.5 0.5 0.5 1" contype="0" conaffinity="0"/>
+                        <site name="cL2_a" pos="0.045400 0.015000 0.035304" size="0.002" rgba="1 0 0 1"/>
+                      </body>
+
+                      <body name="crusL3" pos="0 0 0">
+                        <joint type="hinge" pos="0.078600 -0.015000 0.070304" axis="1 0 0"/>
+                        <inertial pos="0.081406 -0.015000 0.053773" mass="0.001879" diaginertia="3.13852e-7 3.01690e-7 1.84900e-8"/>
+                        <geom type="mesh" mesh="crusL3" rgba="0.5 0.5 0.5 1" contype="0" conaffinity="0"/>
+                        <site name="cL3_a" pos="0.078600 -0.015000 0.035304" size="0.002" rgba="1 0 0 1"/>
+                      </body>
+
+                      <body name="crusL4" pos="0 0 0">
+                        <joint type="hinge" pos="0.045400 -0.015000 0.070304" axis="1 0 0"/>
+                        <inertial pos="0.042610 -0.015000 0.052804" mass="0.001984" diaginertia="3.47811e-7 3.35713e-7 1.88780e-8"/>
+                        <geom type="mesh" mesh="crusL4" rgba="0.5 0.5 0.5 1"/>
+                        
+                        <body name="servo1" pos="0 0 0">
+                          <joint name="servo1_joint" class="xl330_servo" axis="1 0 0" pos="0.045400 -0.015000 0.035304"/>
+                          <inertial pos="0.064705 -0.009505 0.035304" mass="0.012000" diaginertia="7.13888e-7 6.73135e-7 1.10396e-6"/>
+                          <geom type="mesh" mesh="servo1" rgba="0.2 0.2 0.2 1"/>
+
+                          <body name="footL2" pos="0 0 0">
+                            <inertial pos="0.067224 0.000936 0.021858" mass="0.0314" diaginertia="1.37736e-5 5.38515e-6 1.42576e-5"/>
+                            <geom type="mesh" mesh="footL2" rgba="0.5 0.5 0.5 1"/>
+                            <site name="cL1_b" pos="0.078600 0.015000 0.035304"  size="0.002" rgba="0 0 1 1"/>
+                            <site name="cL2_b" pos="0.045400 0.015000 0.035304"  size="0.002" rgba="0 0 1 1"/>
+                            <site name="cL3_b" pos="0.078600 -0.015000 0.035304"  size="0.002" rgba="0 0 1 1"/>
+                          </body>
+
+                        </body>
+
+                      </body>
+
+                    </body>
+
+                  </body>
+
+                </body>
+
+              </body>
+            </body>
+          </body>
+        </body>
+
+
+        <body name="servo7" pos="0 0 0">
+          <joint name="servo7_joint" class="xl330_servo" axis="0 0 1" pos="-0.017500 -0.000000000233 0.130754"/>
+          <inertial pos="-0.022995 -0.000000000306 0.151059" mass="0.012" diaginertia="6.731345e-7 1.103958e-6 7.138884e-7"/>
+          <geom type="mesh" mesh="servo7" rgba="0.2 0.2 0.2 1"/>
+
+          <body name="hipYawR" pos="0 0 0">
+            <inertial pos="-0.036012 0.001539 0.153169" mass="0.0106" diaginertia="1.69677e-6 2.77844e-6 2.68924e-6"/>
+            <geom type="mesh" mesh="hipYawR" rgba="0.5 0.5 0.5 1"/>
+
+            <body name="servo8" pos="0 0 0">
+              <inertial pos="-0.05165 0.002405 0.14805" mass="0.012" diaginertia="1.103958e-6 7.138884e-7 6.731345e-7"/>
+              <geom type="mesh" mesh="servo8" rgba="0.2 0.2 0.2 1"/>
+
+              <body name="hipR" pos="0 0 0">
+                <joint name="servo8_joint" class="xl330_servo" axis="0 -1 0" pos="-0.05165 -0.01790 0.142555"/>
+                <inertial pos="-0.057629 -0.003183 0.122393" mass="0.017061" diaginertia="5.290446e-6 2.376636e-6 5.652026e-6"/>
+                <geom type="mesh" mesh="hipR" rgba="0.5 0.5 0.5 1"/>
+
+                <body name="thighR2" pos="0 0 0">
+                  <joint type="hinge" pos="-0.045400 0.015000 0.117304" axis="1 0 0"/>
+                  <inertial pos="-0.042594 0.015000 0.098835" mass="0.001879" diaginertia="3.13852e-7 3.01690e-7 1.84900e-8"/>
+                  <geom type="mesh" mesh="thighR2" rgba="0.5 0.5 0.5 1"/>
+                  <site name="tR2_a" pos="-0.045400 0.015000 0.082304"  size="0.002" rgba="1 0 0 1"/>
+                </body>
+
+                <body name="thighR3" pos="0 0 0">
+                  <joint type="hinge" pos="-0.078600 -0.015000 0.117304" axis="1 0 0"/>
+                  <inertial pos="-0.081390 -0.015000 0.099804" mass="0.001984" diaginertia="3.47811e-7 3.35713e-7 1.88780e-8"/>
+                  <geom type="mesh" mesh="thighR3" rgba="0.5 0.5 0.5 1" contype="0" conaffinity="0"/>
+                  <site name="tR3_a" pos="-0.078600 -0.015000 0.082304"  size="0.002" rgba="1 0 0 1"/>
+                </body>
+
+                <body name="thighR4" pos="0 0 0">
+                  <joint type="hinge" pos="-0.045400 -0.015000 0.117304" axis="1 0 0"/>
+                  <inertial pos="-0.042610 -0.015000 0.099804" mass="0.001984" diaginertia="3.47812e-7 3.35713e-7 1.88780e-8"/>
+                  <geom type="mesh" mesh="thighR4" rgba="0.5 0.5 0.5 1"/>
+                  <site name="tR4_a" pos="-0.045400 -0.015000 0.082304"  size="0.002" rgba="1 0 0 1"/>
+                </body>
+
+                <body name="servo4" pos="0 0 0">
+                  <inertial pos="-0.059295 0.009505 0.117304" mass="0.012" diaginertia="7.138884e-7 6.731345e-7 1.103958e-6"/>
+                  <geom type="mesh" mesh="servo4" rgba="0.2 0.2 0.2 1"/>
+
+                  <body name="thighR1" pos="0 0 0">
+                    <joint name="servo4_joint" class="xl330_servo" axis="-1 0 0" pos="-0.079600 0.015000 0.117304"/>
+                    <inertial pos="-0.081490 0.015000 0.099038" mass="0.001900" diaginertia="3.20158e-7 3.08117e-7 1.78950e-8"/>
+                    <geom type="mesh" mesh="thighR1" rgba="0.5 0.5 0.5 1"/>
+
+                    <body name="kneeR" pos="0 0 0">
+                      <joint type="hinge" pos="-0.078600 0.015000 0.082304" axis="-1 0 0"/>
+                      <inertial pos="-0.062000 0.00009731 0.076304" mass="0.016518" diaginertia="3.840094e-6 2.300838e-6 5.128523e-6"/>
+                      <geom type="mesh" mesh="kneeR" rgba="0.5 0.5 0.5 1"/>
+                      <site name="tR2_b" pos="-0.045400 0.015000 0.082304"  size="0.002" rgba="0 0 1 1"/>
+                      <site name="tR3_b" pos="-0.078600 -0.015000 0.082304"  size="0.002" rgba="0 0 1 1"/>
+                      <site name="tR4_b" pos="-0.045400 -0.015000 0.082304"  size="0.002" rgba="0 0 1 1"/>
+
+                      <body name="crusR1" pos="0 0 0">
+                        <joint type="hinge" pos="-0.078600 0.015000 0.070304" axis="1 0 0"/>
+                        <inertial pos="-0.081514 0.015000 0.053884" mass="0.001868" diaginertia="3.09143e-7 2.97113e-7 1.77530e-8"/>
+                        <geom type="mesh" mesh="crusR1" rgba="0.5 0.5 0.5 1" contype="0" conaffinity="0"/>
+                        <site name="cR1_a" pos="-0.078600 0.015000 0.035304" size="0.002" rgba="1 0 0 1"/>
+                      </body>
+
+                      <body name="crusR2" pos="0 0 0">
+                        <joint type="hinge" pos="-0.045400 0.015000 0.070304" axis="1 0 0"/>
+                        <inertial pos="-0.042610 0.015000 0.052804" mass="0.001984" diaginertia="3.47812e-7 3.35713e-7 1.88780e-8"/>
+                        <geom type="mesh" mesh="crusR2" rgba="0.5 0.5 0.5 1" contype="0" conaffinity="0"/>
+                        <site name="cR2_a" pos="-0.045400 0.015000 0.035304" size="0.002" rgba="1 0 0 1"/>
+                      </body>
+
+                      <body name="crusR3" pos="0 0 0">
+                        <joint type="hinge" pos="-0.078600 -0.015000 0.070304" axis="1 0 0"/>
+                        <inertial pos="-0.081406 -0.015000 0.053773" mass="0.001879" diaginertia="3.13852e-7 3.01689e-7 1.84900e-8"/>
+                        <geom type="mesh" mesh="crusR3" rgba="0.5 0.5 0.5 1" contype="0" conaffinity="0"/>
+                        <site name="cR3_a" pos="-0.078600 -0.015000 0.035304" size="0.002" rgba="1 0 0 1"/>
+                      </body>
+
+                      <body name="crusR4" pos="0 0 0">
+                        <joint type="hinge" pos="-0.045400 -0.015000 0.070304" axis="1 0 0"/>
+                        <inertial pos="-0.042610 -0.015000 0.052804" mass="0.001984" diaginertia="3.47812e-7 3.35713e-7 1.88780e-8"/>
+                        <geom type="mesh" mesh="crusR4" rgba="0.5 0.5 0.5 1"/>
+                        
+                        <body name="servo3" pos="0 0 0">
+                          <joint name="servo3_joint" class="xl330_servo" axis="-1 0 0" pos="-0.045400 -0.015000 0.035304"/>
+                          <inertial pos="-0.064705 -0.009505 0.035304" mass="0.012" diaginertia="7.138884e-7 6.731345e-7 1.103958e-6"/>
+                          <geom type="mesh" mesh="servo3" rgba="0.2 0.2 0.2 1"/>
+
+                          <body name="footR2" pos="0 0 0">
+                            <inertial pos="-0.067224 0.000936 0.021858" mass="0.0314" diaginertia="1.37736e-5 5.38515e-6 1.42576e-5"/>
+                            <geom type="mesh" mesh="footR2" rgba="0.5 0.5 0.5 1"/>
+                            <site name="cR1_b" pos="-0.078600 0.015000 0.035304"   size="0.002" rgba="0 0 1 1"/>
+                            <site name="cR2_b" pos="-0.045400 0.015000 0.035304"  size="0.002" rgba="0 0 1 1"/>
+                            <site name="cR3_b" pos="-0.078600 -0.015000 0.035304"  size="0.002" rgba="0 0 1 1"/>
+                          </body>
+
+                        </body>
+
+                      </body>
+
+                    </body>
+
+                  </body>
+
+                </body>
+
+              </body>
+            </body>
+          </body>
+        </body>
+      
+      </body>
+
+    </body>
+
+    <geom type="plane" size="5 5 0.1" pos="0 0 0" rgba="0.6 0.8 1.0 1"/>
+  </worldbody>
+
+  <equality>
+    <connect site1="tL2_a" site2="tL2_b" solref="0.001 1" solimp="1 1 0.0001"/>
+    <connect site1="tL3_a" site2="tL3_b" solref="0.001 1" solimp="1 1 0.0001"/>
+    <connect site1="tL4_a" site2="tL4_b" solref="0.001 1" solimp="1 1 0.0001"/>
+
+    <connect site1="cL1_a" site2="cL1_b" solref="0.001 1" solimp="1 1 0.0001"/>
+    <connect site1="cL2_a" site2="cL2_b" solref="0.001 1" solimp="1 1 0.0001"/>
+    <connect site1="cL3_a" site2="cL3_b" solref="0.001 1" solimp="1 1 0.0001"/>
+
+    <connect site1="tR2_a" site2="tR2_b" solref="0.001 1" solimp="1 1 0.0001"/>
+    <connect site1="tR3_a" site2="tR3_b" solref="0.001 1" solimp="1 1 0.0001"/>
+    <connect site1="tR4_a" site2="tR4_b" solref="0.001 1" solimp="1 1 0.0001"/>
+
+    <connect site1="cR1_a" site2="cR1_b" solref="0.001 1" solimp="1 1 0.0001"/>
+    <connect site1="cR2_a" site2="cR2_b" solref="0.001 1" solimp="1 1 0.0001"/>
+    <connect site1="cR3_a" site2="cR3_b" solref="0.001 1" solimp="1 1 0.0001"/>
+  </equality>
+
+  <actuator>
+    <position name="servo5_pos" class="xl330_servo" joint="servo5_joint" ctrlrange="-1.05 1.05"/>
+    <position name="servo7_pos" class="xl330_servo" joint="servo7_joint" ctrlrange="-1.05 1.05"/>
+    <position name="servo6_pos" class="xl330_servo" joint="servo6_joint" ctrlrange="-0.55 1.57079632679"/>
+    <position name="servo2_pos" class="xl330_servo" joint="servo2_joint" ctrlrange="-1.186823891 1.186823891"/>
+    <position name="servo1_pos" class="xl330_servo" joint="servo1_joint" ctrlrange="-1.186823891 1.186823891"/>
+    <position name="servo8_pos" class="xl330_servo" joint="servo8_joint" ctrlrange="-1.57079632679 0.55"/>
+    <position name="servo4_pos" class="xl330_servo" joint="servo4_joint" ctrlrange="-1.186823891 1.186823891"/>
+    <position name="servo3_pos" class="xl330_servo" joint="servo3_joint" ctrlrange="-1.186823891 1.186823891"/>
+  </actuator>
+</mujoco>
