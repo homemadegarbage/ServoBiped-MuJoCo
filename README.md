@@ -176,7 +176,3 @@ The ground is defined as a plane:
 ```
 
 Therefore, the STL files must be placed in the `assets` directory relative to `robo.xml`.
-
-## License
-
-MIT License
