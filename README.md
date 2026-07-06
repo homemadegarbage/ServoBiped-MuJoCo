@@ -9,6 +9,13 @@ PWMサーボによる2足歩行ロボットです。
 Details:
 https://homemadegarbage.com/servomodel02
 
+## Demo Videos
+
+Python scripts running with the MuJoCo model:
+
+- [MuJoCo model viewer demo on X](https://x.com/H0meMadeGarbage/status/2073959499720020230)
+- [IK slider control demo on X](https://x.com/H0meMadeGarbage/status/2073959801487515758)
+
 ## Files
 
 ```text
